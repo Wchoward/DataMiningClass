@@ -1,0 +1,7 @@
+*.DS_Store
+*.pyc
+*checkpoint.ipynb
+.mypy_cache*
+.vscode*
+.pdf
+.tex
