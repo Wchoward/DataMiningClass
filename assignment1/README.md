@@ -20,12 +20,12 @@
 
 **目录结构**
 
-.
-├── README.md
-├── crime_process.py
-├── data
-│   ├── oakland-crime-statistics-2011-to-2016
-│   └── youtube-new
-├── oakland_crime.ipynb
-├── youtube.ipynb
-└── youtube_process.py
+.  
+├── README.md  
+├── crime_process.py  
+├── data  
+│   ├── oakland-crime-statistics-2011-to-2016  
+│   └── youtube-new  
+├── oakland_crime.ipynb  
+├── youtube.ipynb  
+└── youtube_process.py  
