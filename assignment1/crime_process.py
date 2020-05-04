@@ -42,14 +42,15 @@ class crime_data():
     def get_row_index(self, file_index, value):
         lst = []
         entity = []
-        for i, row in self.data[file_index].iterrows():
-            if row[self.column] == value:
+        for i in range(self.data[file_index].shape[0]):
+            if self.data[file_index].loc[i, self.column] == value:
                 lst.append(i)
-                entity.append(row.values)
+                entity.append(self.data[file_index].loc[i].values)
         return lst, entity
 
     def delete_row(self, file_index, index_lst):
         self.data[file_index] = self.data[file_index].drop(index=index_lst)
+        self.data[file_index].reset_index(drop = True, inplace = True)
 
     def generate_new_col(self,col1,col2,f):
         for i in self.data:
@@ -104,19 +105,10 @@ class crime_data():
         plt.ylabel(ylabel)
         plt.hist(col, bins=40, alpha=0.7)
 
-    # def get_fre(self):
-    #     col = self.data[self.column]
-    #     print(col.value_counts())
-    #
-    # def normal_pie(self,w,h):
-    #     col = np.array(self.data[self.column].value_counts())
-    #     fig = plt.figure(figsize=(w, h))
-    #     explode = (0, 0.1)
-    #     colors = ['#cddc39', '#fbc02d']
-    #     plt.pie(col, autopct="%.2f%%", labels=['False', 'True'],
-    #             startangle=150, explode=explode, colors=colors)
-    #     plt.show()
-    #
+    def get_fre(self, index):
+        col = self.data[index][self.column]
+        return col.value_counts()
+    
     def normal_bar(self, index, w, h, n_before, n_after, xticks):
         fig = plt.figure(figsize=(w, h))
         plt.subplot(121)
@@ -146,8 +138,3 @@ class crime_data():
             print(y, ':', cnt)
             y += 1
         return res
-        #
-        # def fill_none(self,other_col,none_token=''):
-        #     for i in range(self.data.shape[0]):
-        #         if(self.data[self.column][i] == none_token):
-        #             self.data.loc[i,self.column] = self.data.loc[i,other_col]
