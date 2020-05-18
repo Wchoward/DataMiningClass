@@ -6,3 +6,10 @@
 ## 互评作业1
 
 代码在`assignment1`文件夹中，详情见assignment1中的readme.
+
+
+
+## 互评作业2
+
+代码在`assignment2`文件夹中，详情见assignment2中的readme.
+
