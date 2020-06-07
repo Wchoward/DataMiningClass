@@ -13,3 +13,9 @@
 
 代码在`assignment2`文件夹中，详情见assignment2中的readme.
 
+
+
+## 互评作业3
+
+代码在`assignment3`文件夹中，详情见assignment3中的readme.
+
